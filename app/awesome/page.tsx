@@ -1,9 +1,15 @@
 import React from 'react';
+import Link from 'next/link';
 
 function AwesomePage() {
   return (
     <main>
       <h1>tra</h1>
+      <div>
+        <Link href="/">
+          <p>Main page</p>
+        </Link>
+      </div>
     </main>
   );
 }
