@@ -27,6 +27,9 @@ export default function Home() {
           <Link href="/awesome">
             <p>Awesome page</p>
           </Link>
+          <Link href="/second">
+            <p>Second page</p>
+          </Link>
         </div>
       </main>
     </div>
