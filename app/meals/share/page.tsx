@@ -1,11 +1,11 @@
 import React from 'react';
 
-function SharePage() {
+function ShareMealsPage() {
   return (
     <div>
-      <p>SharePage</p>
+      <p>ShareMealsPage</p>
     </div>
   );
 }
 
-export default SharePage;
+export default ShareMealsPage;
