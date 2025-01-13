@@ -14,11 +14,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className="m-0 h-full bg-gradient-to-b from-[#282c34] to-[#282c34] font-['Quicksand'] text-white">
-        <div className="header-background absolute top-0 left-0 w-full h-[320px] z-[-1]">
+        <div className="absolute left-0 top-0 z-[-1] h-[320px] w-full header-background">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1440 320"
-            className="w-full h-full"
+            className="h-full w-full"
           >
             <defs>
               <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
