@@ -5,9 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
-  const pathname = usePathname(); // Get the current path
-
-  const isActive = (path: string) => pathname === path;
+  const pathname = usePathname();
 
   return (
     <header className="flex items-center justify-between px-2 py-0 md:py-6">
@@ -23,7 +21,7 @@ export default function Header() {
           <li>
             <Link
               className={`${
-                isActive('/meals') ? 'text-amber-500' : 'text-white'
+                pathname.startsWith('/meals') ? 'text-amber-500' : 'text-white'
               } transition-all hover:text-amber-500`}
               href="/meals"
             >
@@ -33,7 +31,9 @@ export default function Header() {
           <li>
             <Link
               className={`${
-                isActive('/community') ? 'text-amber-500' : 'text-white'
+                pathname.startsWith('/community')
+                  ? 'text-amber-500'
+                  : 'text-white'
               } transition-all hover:text-amber-500`}
               href="/community"
             >
