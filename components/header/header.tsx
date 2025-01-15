@@ -1,12 +1,9 @@
-'use client';
 import logoImg from '../../assets/logo.png';
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import NavLink from '@/components/header/NavLink';
 
 export default function Header() {
-  const pathname = usePathname();
-
   return (
     <header className="flex items-center justify-between px-2 py-0 md:py-6">
       <Link
@@ -19,26 +16,10 @@ export default function Header() {
       <nav>
         <ul className="m-0 flex list-none gap-2 p-0 font-bold no-underline active:bg-amber-600 active:bg-clip-text">
           <li>
-            <Link
-              className={`${
-                pathname.startsWith('/meals') ? 'text-amber-500' : 'text-white'
-              } transition-all hover:text-amber-500`}
-              href="/meals"
-            >
-              Meals
-            </Link>
+            <NavLink pathname="/meals" title="Meals" />
           </li>
           <li>
-            <Link
-              className={`${
-                pathname.startsWith('/community')
-                  ? 'text-amber-500'
-                  : 'text-white'
-              } transition-all hover:text-amber-500`}
-              href="/community"
-            >
-              Community
-            </Link>
+            <NavLink pathname="/community" title="Community" />
           </li>
         </ul>
       </nav>
