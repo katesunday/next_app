@@ -10,7 +10,7 @@ export default function Header() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <header className="flex items-center justify-between px-2 py-0 md:py-1">
+    <header className="flex items-center justify-between px-2 py-0 md:py-6">
       <Link
         href="/"
         className="flex items-center justify-center gap-2 font-bold text-white md:text-xl"

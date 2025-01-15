@@ -11,6 +11,10 @@ export default {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
+        neutral: '#ddd6cb',
+      },
+      fontFamily: {
+        primary: ['Montserrat', 'sans-serif'],
       },
     },
   },
@@ -28,6 +32,12 @@ export default {
           top: '0',
           left: '0',
           zIndex: '-1',
+        },
+        '.bg-gradient-link': {
+          background: 'linear-gradient(90deg, #f9572a, #ff9b05)',
+        },
+        '.bg-gradient-link:hover': {
+          background: 'linear-gradient(90deg, #fd4715, #f9b241)',
         },
       });
     },
