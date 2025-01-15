@@ -39,6 +39,15 @@ export default {
         '.bg-gradient-link:hover': {
           background: 'linear-gradient(90deg, #fd4715, #f9b241)',
         },
+        '.slide-show-animation': {
+          transform: 'scale(1.1) translateX(-1rem)',
+          transition: 'all 0.5s ease-in-out',
+        },
+        '.slide-show-animation-active': {
+          zIndex: '1',
+          opacity: '1',
+          transform: 'scale(1) translateX(0) rotate(0)',
+        },
       });
     },
   ],

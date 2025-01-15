@@ -1,10 +1,13 @@
 import Link from 'next/link';
+import ImageSlideShow from '@/components/images/ImageSlideShow';
 
 export default function Home() {
   return (
     <>
       <header className="mx-auto my-12 flex w-[90%] max-w-[75rem] flex-col gap-12 md:flex-row">
-        <div className="h-64 w-96">slideshow</div>
+        <div className="h-64 w-96">
+          <ImageSlideShow />
+        </div>
         <div>
           <div className="text-neutral text-xl">
             <h1 className="font-primary bg-gradient-to-r from-[#f9572a] to-[#ffc905] bg-clip-text text-2xl font-bold uppercase text-transparent">
@@ -29,7 +32,7 @@ export default function Home() {
         </div>
       </header>
       <main>
-        <section className="text-neutral max-w-200 mx-auto my-4 flex w-[90%] flex-col text-center text-lg">
+        <section className="max-w-200 text-neutral mx-auto my-4 flex w-[90%] flex-col text-center text-lg">
           <h2 className="text-xl font-bold">How it works</h2>
           <p>
             NextLevel Food is a platform for foodies to share their favorite
@@ -42,7 +45,7 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="text-neutral max-w-200 mx-auto my-4 flex w-[90%] flex-col text-center text-lg">
+        <section className="max-w-200 text-neutral mx-auto my-4 flex w-[90%] flex-col text-center text-lg">
           <h2 className="text-xl font-bold">Why NextLevel Food?</h2>
           <p>
             NextLevel Food is a platform for foodies to share their favorite
