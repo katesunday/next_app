@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Loading() {
+function Spinner() {
   return (
     <div role="status" className="flex justify-center">
       <svg
@@ -24,4 +24,4 @@ function Loading() {
   );
 }
 
-export default Loading;
+export default Spinner;
