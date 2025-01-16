@@ -1,8 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import MealsGrid from '@/components/meals/MealsGrid';
+import getMeals from '@/lib/meals';
+import { MealType } from '@/initdb';
 
-function MealsPage() {
+async function MealsPage() {
+  const meals: MealType[] = await getMeals();
   return (
     <>
       <header className="mx-auto my-16 flex w-[90%] max-w-[75rem] flex-col gap-4">
@@ -21,7 +24,7 @@ function MealsPage() {
         </Link>
       </header>
       <main>
-        <MealsGrid meals={[]} />
+        <MealsGrid meals={meals} />
       </main>
     </>
   );

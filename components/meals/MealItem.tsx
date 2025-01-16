@@ -1,15 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { MealType } from '@/initdb';
 
-type MealItemProps = {
-  title: string;
-  slug: string;
-  image: never;
-  summary: string;
-  creator: string;
-};
-function MealItem({ title, slug, image, summary, creator }: MealItemProps) {
+function MealItem({ title, slug, image, summary, creator }: MealType) {
   return (
     <article className="bg-meal-item flex h-full flex-col justify-between overflow-hidden rounded-md font-primary">
       <header>
