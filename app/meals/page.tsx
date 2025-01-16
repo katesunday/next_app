@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import MealsGrid from '@/components/meals/MealsGrid';
 
 function MealsPage() {
   return (
@@ -19,6 +20,9 @@ function MealsPage() {
           Share your favorite recipe!
         </Link>
       </header>
+      <main>
+        <MealsGrid meals={[]} />
+      </main>
     </>
   );
 }

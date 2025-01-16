@@ -12,6 +12,7 @@ export default {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
         neutral: '#ddd6cb',
+        beige: '#cfa69b',
       },
       fontFamily: {
         primary: ['Montserrat', 'sans-serif'],
@@ -47,6 +48,9 @@ export default {
           zIndex: '1',
           opacity: '1',
           transform: 'scale(1) translateX(0) rotate(0)',
+        },
+        '.bg-meal-item': {
+          background: 'linear-gradient(90deg, #2c1e19, #25200f)',
         },
       });
     },
