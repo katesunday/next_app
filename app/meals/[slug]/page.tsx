@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { getMeal } from '@/lib/meals';
+import { notFound } from 'next/navigation';
 
 type MealDetailProps = {
   params: {
@@ -10,6 +11,9 @@ type MealDetailProps = {
 
 async function MealDetailPage({ params }: MealDetailProps) {
   const meal = await getMeal(params.slug);
+  if (!meal) {
+    notFound();
+  }
   return (
     <>
       <header className="m-auto flex max-w-[80rem] gap-12 px-4 py-8">
