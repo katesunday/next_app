@@ -10,7 +10,7 @@ async function FetchMeals() {
   return <MealsGrid meals={meals} />;
 }
 
-async function MealsPage() {
+function MealsPage() {
   return (
     <>
       <header className="mx-auto my-16 flex w-[90%] max-w-[75rem] flex-col gap-4">

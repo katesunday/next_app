@@ -13,6 +13,7 @@ export default {
         foreground: 'var(--foreground)',
         neutral: '#ddd6cb',
         beige: '#cfa69b',
+        dark_beige: '#6e6464',
       },
       fontFamily: {
         primary: ['Montserrat', 'sans-serif'],

@@ -10,3 +10,10 @@ export default async function getMeals(): Promise<MealType[]> {
 
   return db.prepare('SELECT * FROM meals').all() as MealType[];
 }
+
+export async function getMeal(slug: string): Promise<MealType> {
+  await new Promise((resolve) => {
+    setTimeout(resolve, 2000);
+  });
+  return db.prepare('SELECT * FROM meals WHERE slug = ?').get(slug) as MealType;
+}

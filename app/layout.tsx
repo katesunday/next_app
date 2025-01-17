@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full">
-      <body className="m-0 h-full bg-gradient-to-b from-[#282c34] to-[#282c34] font-['Quicksand'] text-white">
+      <body className="m-0 h-full bg-gradient-to-b from-[#282c34] to-[#282c34] pb-8 font-['Quicksand'] text-white">
         <HeaderBg />
         <Header />
 
