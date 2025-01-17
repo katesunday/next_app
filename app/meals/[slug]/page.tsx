@@ -1,12 +1,12 @@
 import React from 'react';
 
-interface VariousPageProps {
+function MealDetailPage({
+  params,
+}: {
   params: {
     slug: string;
   };
-}
-
-function VariousPage({ params }: VariousPageProps) {
+}) {
   return (
     <div>
       <p>VariousPage</p>
@@ -15,4 +15,4 @@ function VariousPage({ params }: VariousPageProps) {
   );
 }
 
-export default VariousPage;
+export default MealDetailPage;
