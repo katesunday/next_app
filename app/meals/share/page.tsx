@@ -20,7 +20,13 @@ function ShareMealsPage() {
               >
                 Your name
               </label>
-              <input type="text" id="name" name="name" required />
+              <input
+                className="border-1 border-dark_grey block w-full rounded-md border bg-black px-4 py-2 font-primary text-xl text-neutral"
+                type="text"
+                id="name"
+                name="name"
+                required
+              />
             </p>
             <p>
               <label
@@ -29,7 +35,13 @@ function ShareMealsPage() {
               >
                 Your email
               </label>
-              <input type="email" id="email" name="email" required />
+              <input
+                className="border-1 border-dark_grey block w-full rounded-md border bg-black px-4 py-2 font-primary text-xl text-neutral"
+                type="email"
+                id="email"
+                name="email"
+                required
+              />
             </p>
           </div>
           <p>
@@ -39,7 +51,13 @@ function ShareMealsPage() {
             >
               Title
             </label>
-            <input type="text" id="title" name="title" required />
+            <input
+              className="border-1 border-dark_grey block w-full rounded-md border bg-black px-4 py-2 font-primary text-xl text-neutral"
+              type="text"
+              id="title"
+              name="title"
+              required
+            />
           </p>
           <p>
             <label
@@ -48,7 +66,13 @@ function ShareMealsPage() {
             >
               Short Summary
             </label>
-            <input type="text" id="summary" name="summary" required />
+            <input
+              className="border-1 border-dark_grey block w-full rounded-md border bg-black px-4 py-2 font-primary text-xl text-neutral"
+              type="text"
+              id="summary"
+              name="summary"
+              required
+            />
           </p>
           <p>
             <label
@@ -58,6 +82,7 @@ function ShareMealsPage() {
               Instructions
             </label>
             <textarea
+              className="border-1 border-dark_grey focus:outline-orange focus:bg-dark block w-full rounded-md border bg-black px-4 py-2 font-primary text-xl text-neutral"
               id="instructions"
               name="instructions"
               rows={10}

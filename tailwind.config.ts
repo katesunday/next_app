@@ -15,6 +15,9 @@ export default {
         beige: '#cfa69b',
         dark_beige: '#6e6464',
         light_beige: '#b3aea5',
+        dark_grey: '#454952',
+        orange: '#f99f2a',
+        dark: '#1f252d',
       },
       fontFamily: {
         primary: ['Montserrat', 'sans-serif'],
