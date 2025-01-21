@@ -1,4 +1,5 @@
 import React from 'react';
+import ImagePicker from '@/components/meals/ImagePicker';
 
 function ShareMealsPage() {
   return (
@@ -91,7 +92,7 @@ function ShareMealsPage() {
               required
             ></textarea>
           </p>
-          IMAGE PICKER
+          <ImagePicker />
           <p className="text-right">
             <button
               className="disabled:cursor-not-allowedcursor-pointer rounded-md border-0 border-none px-8 py-4 text-lg text-inherit text-white shadow-lg bg-gradient-link hover:bg-gradient-link focus:outline-none focus:ring-2 disabled:bg-gray-300 disabled:text-gray-400"
