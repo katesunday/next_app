@@ -6,8 +6,8 @@ function ShareMealsPage() {
     <>
       <header className="mx-20 my-12 w-[90%] max-w-[75rem] gap-12 font-primary text-neutral">
         <h1>
-          Share your{' '}
-          <span className="rounded-md bg-clip-text px-2 py-1 bg-gradient-link">
+          Share your
+          <span className="text-orange rounded-md bg-clip-text px-2 py-1 text-xl font-bold">
             favorite meal!
           </span>
         </h1>
