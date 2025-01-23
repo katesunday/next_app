@@ -5,14 +5,14 @@ import { MealType } from '@/initdb';
 
 function MealItem({ title, slug, image, summary, creator }: MealType) {
   return (
-    <article className="bg-meal-item flex h-full flex-col justify-between overflow-hidden rounded-md font-primary">
+    <article className="flex h-full flex-col justify-between overflow-hidden rounded-md font-primary bg-meal-item">
       <header>
         <div className="relative h-60 object-cover">
           <Image src={image} alt={title} fill />
         </div>
         <div className="pb-0 pl-4 pr-4 pt-2">
           <h2 className="m-0 font-primary text-xl">{title}</h2>
-          <p className="text-beige text-lg italic">by {creator}</p>
+          <p className="text-lg italic text-beige">by {creator}</p>
         </div>
       </header>
       <div className="flex h-full flex-col justify-between">

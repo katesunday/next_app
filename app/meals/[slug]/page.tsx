@@ -43,7 +43,7 @@ async function MealDetailPage({ params }: MealDetailProps) {
       </header>
       <main>
         <p
-          className="bg-dark_beige mx-auto my-8 max-w-[60rem] rounded-md p-8 text-xl text-black"
+          className="mx-auto my-8 max-w-[60rem] rounded-md bg-dark_beige p-8 text-xl text-black"
           dangerouslySetInnerHTML={{
             __html: `${meal.instructions.replace(/\n/g, '<br />')}`,
           }}
