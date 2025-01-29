@@ -1,9 +1,11 @@
 'use client';
 import React, { ChangeEvent, useRef, useState } from 'react';
+import Image from 'next/image';
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
 function ImagePicker({ label, name }: { label?: string; name: string }) {
   const ref = useRef<HTMLInputElement>(null);
-  const [image, setImage] = useState<string | ArrayBuffer | null>(null);
+  const [image, setImage] = useState<string | null | StaticImport>(null);
 
   const handleClick = () => {
     ref.current?.click();
@@ -16,7 +18,9 @@ function ImagePicker({ label, name }: { label?: string; name: string }) {
 
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
-      setImage(fileReader.result);
+      if (typeof fileReader.result === 'string') {
+        setImage(fileReader.result);
+      }
     };
     fileReader.readAsDataURL(file);
   };
@@ -24,8 +28,9 @@ function ImagePicker({ label, name }: { label?: string; name: string }) {
     <div>
       <label htmlFor="image">{label}</label>
       <div className="mb-4 flex items-start gap-8">
-        <div className="border-grey-50 relative flex h-40 w-40 items-center justify-center border-2 border-solid text-center">
+        <div className="border-grey-50 relative mt-4 flex h-40 w-40 items-center justify-center border-2 border-solid text-center">
           {!image && <p>No image picked yet</p>}
+          {image && <Image src={image} alt="image" fill />}
         </div>
         <input
           ref={ref}
