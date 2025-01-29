@@ -7,7 +7,7 @@ function ShareMealsPage() {
       <header className="mx-20 my-12 w-[90%] max-w-[75rem] gap-12 font-primary text-neutral">
         <h1>
           Share your
-          <span className="rounded-md bg-clip-text px-2 py-1 text-xl font-bold text-orange">
+          <span className="text-orange rounded-md bg-clip-text px-2 py-1 text-xl font-bold">
             favorite meal!
           </span>
         </h1>
@@ -18,13 +18,13 @@ function ShareMealsPage() {
           <div className="flex gap-4">
             <p className="w-full">
               <label
-                className="mb-1 block font-primary text-sm font-bold uppercase text-light_beige"
+                className="text-light_beige mb-1 block font-primary text-sm font-bold uppercase"
                 htmlFor="name"
               >
                 Your name
               </label>
               <input
-                className="border-1 block w-full rounded-md border border-dark_grey bg-black px-4 py-2 font-primary text-xl text-neutral focus:bg-dark focus:outline-orange"
+                className="border-1 border-dark_grey focus:bg-dark focus:outline-orange block w-full rounded-md border bg-black px-4 py-2 font-primary text-xl text-neutral"
                 type="text"
                 id="name"
                 name="name"
@@ -33,13 +33,13 @@ function ShareMealsPage() {
             </p>
             <p className="w-full">
               <label
-                className="mb-1 block font-primary text-sm font-bold uppercase text-light_beige"
+                className="text-light_beige mb-1 block font-primary text-sm font-bold uppercase"
                 htmlFor="email"
               >
                 Your email
               </label>
               <input
-                className="border-1 block w-full rounded-md border border-dark_grey bg-black px-4 py-2 font-primary text-xl text-neutral focus:bg-dark focus:outline-orange"
+                className="border-1 border-dark_grey focus:bg-dark focus:outline-orange block w-full rounded-md border bg-black px-4 py-2 font-primary text-xl text-neutral"
                 type="email"
                 id="email"
                 name="email"
@@ -49,13 +49,13 @@ function ShareMealsPage() {
           </div>
           <p className="w-full">
             <label
-              className="mb-1 block font-primary text-sm font-bold uppercase text-light_beige"
+              className="text-light_beige mb-1 block font-primary text-sm font-bold uppercase"
               htmlFor="title"
             >
               Title
             </label>
             <input
-              className="border-1 block w-full rounded-md border border-dark_grey bg-black px-4 py-2 font-primary text-xl text-neutral focus:bg-dark focus:outline-orange"
+              className="border-1 border-dark_grey focus:bg-dark focus:outline-orange block w-full rounded-md border bg-black px-4 py-2 font-primary text-xl text-neutral"
               type="text"
               id="title"
               name="title"
@@ -64,13 +64,13 @@ function ShareMealsPage() {
           </p>
           <p className="w-full">
             <label
-              className="mb-1 block font-primary text-sm font-bold uppercase text-light_beige"
+              className="text-light_beige mb-1 block font-primary text-sm font-bold uppercase"
               htmlFor="summary"
             >
               Short Summary
             </label>
             <input
-              className="border-1 block w-full rounded-md border border-dark_grey bg-black px-4 py-2 font-primary text-xl text-neutral focus:bg-dark focus:outline-orange"
+              className="border-1 border-dark_grey focus:bg-dark focus:outline-orange block w-full rounded-md border bg-black px-4 py-2 font-primary text-xl text-neutral"
               type="text"
               id="summary"
               name="summary"
@@ -79,20 +79,20 @@ function ShareMealsPage() {
           </p>
           <p className="w-full">
             <label
-              className="mb-1 block font-primary text-sm font-bold uppercase text-light_beige"
+              className="text-light_beige mb-1 block font-primary text-sm font-bold uppercase"
               htmlFor="instructions"
             >
               Instructions
             </label>
             <textarea
-              className="border-1 block w-full rounded-md border border-dark_grey bg-black px-4 py-2 font-primary text-xl text-neutral focus:bg-dark focus:outline-orange"
+              className="border-1 border-dark_grey focus:bg-dark focus:outline-orange block w-full rounded-md border bg-black px-4 py-2 font-primary text-xl text-neutral"
               id="instructions"
               name="instructions"
               rows={10}
               required
             ></textarea>
           </p>
-          <ImagePicker />
+          <ImagePicker name="name" />
           <p className="text-right">
             <button
               className="disabled:cursor-not-allowedcursor-pointer rounded-md border-0 border-none px-8 py-4 text-lg text-inherit text-white shadow-lg bg-gradient-link hover:bg-gradient-link focus:outline-none focus:ring-2 disabled:bg-gray-300 disabled:text-gray-400"
