@@ -15,6 +15,10 @@ function ImagePicker({ label, name }: { label?: string; name: string }) {
       return;
     }
     const file = e.target.files[0];
+    if (!file) {
+      setImage(null);
+      return;
+    }
 
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
@@ -40,6 +44,7 @@ function ImagePicker({ label, name }: { label?: string; name: string }) {
           accept="image/png, image/jpeg"
           name={name}
           onChange={(e) => handleImageChange(e)}
+          required
         />
         <button
           className="bg-grey-30 hover:bg-grey-50 mt-4 cursor-pointer rounded border-0 px-4 py-2 text-inherit"
