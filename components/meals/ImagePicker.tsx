@@ -32,7 +32,7 @@ function ImagePicker({ label, name }: { label?: string; name: string }) {
     <div>
       <label htmlFor="image">{label}</label>
       <div className="mb-4 flex items-start gap-8">
-        <div className="relative mt-4 flex h-40 w-40 items-center justify-center border-2 border-solid border-grey-50 text-center">
+        <div className="border-grey-50 relative mt-4 flex h-40 w-40 items-center justify-center border-2 border-solid text-center">
           {!image && <p>No image picked yet</p>}
           {image && <Image src={image} alt="image" fill />}
         </div>
@@ -47,7 +47,7 @@ function ImagePicker({ label, name }: { label?: string; name: string }) {
           required
         />
         <button
-          className="mt-4 cursor-pointer rounded border-0 bg-grey-30 px-4 py-2 text-inherit hover:bg-grey-50"
+          className="bg-grey-30 hover:bg-grey-50 mt-4 cursor-pointer rounded border-0 px-4 py-2 text-inherit"
           type="button"
           onClick={handleClick}
         >
