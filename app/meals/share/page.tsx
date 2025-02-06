@@ -1,19 +1,40 @@
 import React from 'react';
 import ImagePicker from '@/components/meals/ImagePicker';
+import { MealType } from '@/initdb';
 
 function ShareMealsPage() {
+  function getFormDataString<T extends Record<string, never>>(
+    formData: FormData,
+    key: keyof T,
+  ): string | null {
+    const value = formData.get(key as string);
+    return typeof value === 'string' ? value : null;
+  }
+
+  function getFormDataFile<T extends Record<string, never>>(
+    formData: FormData,
+    key: keyof T,
+  ): File | null {
+    const value = formData.get(key as string);
+    return value instanceof File ? value : null;
+  }
+
   async function shareMeal(formData: FormData) {
     'use server';
 
-    const meal = {
-      title: formData.get('title'),
-      summary: formData.get('summary'),
-      instructions: formData.get('instructions'),
-      image: formData.get('image'),
-      creator: formData.get('name'),
-      creator_email: formData.get('email'),
+    const meal: Record<keyof MealType, string | File | null> = {
+      title: getFormDataString(formData, 'title'),
+      summary: getFormDataString(formData, 'summary'),
+      instructions: getFormDataString(formData, 'instructions'),
+      image: getFormDataFile(formData, 'image'),
+      creator: getFormDataString(formData, 'name'),
+      creator_email: getFormDataString(formData, 'email'),
+      slug: getFormDataString(formData, 'title')!.split('').join('_'),
     };
+
+    console.log(meal);
   }
+
   return (
     <>
       <header className="mx-20 my-12 w-[90%] max-w-[75rem] gap-12 font-primary text-neutral">
