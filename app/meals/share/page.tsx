@@ -7,6 +7,11 @@ function ShareMealsPage() {
 
     const meal = {
       title: formData.get('title'),
+      summary: formData.get('summary'),
+      instructions: formData.get('instructions'),
+      image: formData.get('image'),
+      creator: formData.get('name'),
+      creator_email: formData.get('email'),
     };
   }
   return (
@@ -99,7 +104,7 @@ function ShareMealsPage() {
               required
             ></textarea>
           </p>
-          <ImagePicker name="name" />
+          <ImagePicker name="image" label="Your image" />
           <p className="text-right">
             <button
               className="disabled:cursor-not-allowedcursor-pointer rounded-md border-0 border-none px-8 py-4 text-lg text-inherit text-white shadow-lg bg-gradient-link hover:bg-gradient-link focus:outline-none focus:ring-2 disabled:bg-gray-300 disabled:text-gray-400"
