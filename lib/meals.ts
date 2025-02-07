@@ -3,6 +3,7 @@ import { MealType } from '@/initdb';
 import slugify from 'slugify';
 import xss from 'xss';
 import * as fs from 'node:fs';
+import { redirect } from 'next/navigation';
 
 const db = sql('meals.db');
 
@@ -47,5 +48,7 @@ export async function saveMeal(meal: MealType): Promise<void> {
       @image,
       @slug) `,
     ).run(meal);
+
+    redirect('/meals');
   }
 }
