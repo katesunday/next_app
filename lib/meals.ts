@@ -1,6 +1,7 @@
 import sql from 'better-sqlite3';
 import { MealType } from '@/initdb';
 import slugify from 'slugify';
+import xss from 'xss';
 
 const db = sql('meals.db');
 
@@ -20,8 +21,12 @@ export async function getMeal(slug: string): Promise<MealType> {
 }
 
 export async function saveMeal(meal: MealType): Promise<void> {
+  meal.slug = slugify(meal.title, { lower: true });
+  meal.instructions = xss(meal.instructions);
+
+  const extension = meal.image.split('.').pop();
+  const 
   await new Promise((resolve) => {
     setTimeout(resolve, 2000);
   });
-  const slug = slugify(meal.title);
 }
