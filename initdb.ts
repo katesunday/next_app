@@ -4,7 +4,7 @@ const db = sql('meals.db');
 export interface MealType {
   title: string;
   slug: string;
-  image: string;
+  image: File | string;
   summary: string;
   instructions: string;
   creator: string;
