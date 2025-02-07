@@ -93,7 +93,7 @@ function ShareMealsPage() {
               required
             ></textarea>
           </p>
-          <ImagePicker name="image" label="Your image" />
+          <ImagePicker name="image" />
           <p className="text-right">
             <button
               className="disabled:cursor-not-allowedcursor-pointer rounded-md border-0 border-none px-8 py-4 text-lg text-inherit text-white shadow-lg bg-gradient-link hover:bg-gradient-link focus:outline-none focus:ring-2 disabled:bg-gray-300 disabled:text-gray-400"
