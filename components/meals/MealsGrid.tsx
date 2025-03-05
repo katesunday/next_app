@@ -4,13 +4,13 @@ import { MealType } from '@/initdb';
 
 function MealsGrid({ meals }: { meals: MealType[] }) {
   return (
-    <ul className="mx-auto my-[2rem] grid w-[90%] max-w-[90rem] list-none grid-cols-[repeat(auto-fill,minmax(20rem,1fr))] gap-[5rem] p-0">
+    <div className="mx-auto my-[2rem] grid w-[90%] max-w-[90rem] list-none grid-cols-[repeat(auto-fill,minmax(20rem,1fr))] gap-[5rem] p-0">
       {meals.map((meal: MealType, index) => (
-        <li key={index}>
+        <div key={index}>
           <MealItem {...meal} />
-        </li>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 }
 
