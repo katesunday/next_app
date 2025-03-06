@@ -2,13 +2,13 @@ import sql from 'better-sqlite3';
 const db = sql('meals.db');
 
 export interface MealType {
-  title: string;
-  slug: string;
-  image: File | string;
-  summary: string;
-  instructions: string;
-  creator: string;
-  creator_email: string;
+  title: string | null;
+  slug: string | null;
+  image: File | string | null;
+  summary: string | null;
+  instructions: string | null;
+  creator: string | null;
+  creator_email: string | null;
 }
 const dummyMeals: MealType[] = [
   {

@@ -1,9 +1,14 @@
-import React from 'react';
+'use client';
+import React, { useActionState } from 'react';
 import ImagePicker from '@/components/meals/ImagePicker';
-import { shareMeal } from '@/lib/actions';
+import { shareMeal, shareMealWrapper } from '@/lib/actions';
 import MealsFormSubmit from '@/components/meals/MealsFormSubmit';
 
 function ShareMealsPage() {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
+  useActionState(shareMeal, { message: null });
+
   return (
     <>
       <header className="mx-20 my-12 w-[90%] max-w-[75rem] gap-12 font-primary text-neutral">
@@ -16,7 +21,7 @@ function ShareMealsPage() {
         <p>Or any other meal you feel needs sharing!</p>
       </header>
       <main className="mx-auto my-12 w-[90%] max-w-[75rem]">
-        <form className="max-w-[50rem]" action={shareMeal}>
+        <form className="max-w-[50rem]" action={shareMealWrapper}>
           <div className="flex gap-4">
             <p className="w-full">
               <label
