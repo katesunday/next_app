@@ -1,13 +1,14 @@
 'use client';
 import React, { useActionState } from 'react';
 import ImagePicker from '@/components/meals/ImagePicker';
-import { shareMeal, shareMealWrapper } from '@/lib/actions';
+import { shareMeal } from '@/lib/actions';
 import MealsFormSubmit from '@/components/meals/MealsFormSubmit';
 
 function ShareMealsPage() {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-expect-error
-  useActionState(shareMeal, { message: null });
+  const [state, formAction] = useActionState(shareMeal, { message: null });
+  console.log(state);
 
   return (
     <>
@@ -21,7 +22,9 @@ function ShareMealsPage() {
         <p>Or any other meal you feel needs sharing!</p>
       </header>
       <main className="mx-auto my-12 w-[90%] max-w-[75rem]">
-        <form className="max-w-[50rem]" action={shareMealWrapper}>
+        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+        {/* @ts-expect-error*/}
+        <form className="max-w-[50rem]" action={shareMeal}>
           <div className="flex gap-4">
             <p className="w-full">
               <label
@@ -50,7 +53,7 @@ function ShareMealsPage() {
                 type="email"
                 id="email"
                 name="email"
-                required
+                //required
               />
             </p>
           </div>
@@ -99,6 +102,7 @@ function ShareMealsPage() {
               required
             ></textarea>
           </p>
+          {state?.message ?? <p>{state?.message}</p>}
           <ImagePicker name="image" />
           <p className="text-right">
             <MealsFormSubmit />

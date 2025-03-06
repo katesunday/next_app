@@ -8,11 +8,12 @@ function isInvalidText(text: string | null) {
   return !text || text.trim() === '';
 }
 export async function shareMeal(
+  prevState: { message: string } | undefined,
   formData: FormData,
-): Promise<void | { message: string }> {
+) {
   const meal: MealType = {
-    title: getFormDataString(formData, 'title') ?? '',
-    summary: getFormDataString(formData, 'summary') ?? '',
+    title: getFormDataString(formData, 'title'),
+    summary: getFormDataString(formData, 'summary'),
     instructions: getFormDataString(formData, 'instructions'),
     image: getFormDataFile(formData, 'image'),
     creator: getFormDataString(formData, 'name'),
@@ -35,7 +36,4 @@ export async function shareMeal(
   }
 
   await saveMeal(meal as MealType);
-}
-export async function shareMealWrapper(formData: FormData): Promise<void> {
-  await shareMeal(formData);
 }
