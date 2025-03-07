@@ -2,15 +2,14 @@ import React from 'react';
 import Image from 'next/image';
 import { getMeal } from '@/lib/meals';
 import { notFound } from 'next/navigation';
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
 type MealDetailProps = {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
 };
 
 async function MealDetailPage({ params }: MealDetailProps) {
-  const meal = await getMeal(params.slug);
+  const meal = await getMeal((await params).slug);
   if (!meal) {
     notFound();
   }
@@ -21,7 +20,7 @@ async function MealDetailPage({ params }: MealDetailProps) {
           <Image
             fill
             className="rounded-md object-cover shadow"
-            src={meal.image}
+            src={meal.image as unknown as StaticImport}
             alt={meal.title}
           />
         </div>
