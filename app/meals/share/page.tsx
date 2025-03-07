@@ -5,9 +5,7 @@ import { shareMeal } from '@/lib/actions';
 import MealsFormSubmit from '@/components/meals/MealsFormSubmit';
 
 function ShareMealsPage() {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error
-  const [state, formAction] = useActionState(shareMeal, { message: null });
+  const [state, formAction] = useActionState(shareMeal, { message: '' });
   console.log(state);
 
   return (
@@ -22,9 +20,7 @@ function ShareMealsPage() {
         <p>Or any other meal you feel needs sharing!</p>
       </header>
       <main className="mx-auto my-12 w-[90%] max-w-[75rem]">
-        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-        {/* @ts-expect-error*/}
-        <form className="max-w-[50rem]" action={shareMeal}>
+        <form className="max-w-[50rem]" action={formAction}>
           <div className="flex gap-4">
             <p className="w-full">
               <label
@@ -53,7 +49,7 @@ function ShareMealsPage() {
                 type="email"
                 id="email"
                 name="email"
-                //required
+                required
               />
             </p>
           </div>
@@ -102,7 +98,7 @@ function ShareMealsPage() {
               required
             ></textarea>
           </p>
-          {state?.message ?? <p>{state?.message}</p>}
+          {state?.message && <p>{state?.message}</p>}
           <ImagePicker name="image" />
           <p className="text-right">
             <MealsFormSubmit />

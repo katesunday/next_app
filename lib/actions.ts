@@ -11,7 +11,12 @@ export async function shareMeal(
   prevState: { message: string } | undefined,
   formData: FormData,
 ) {
-  const meal: MealType = {
+  debugger;
+  const meal: {
+    [K in keyof MealType]: K extends 'image'
+      ? File | string | null
+      : string | null;
+  } = {
     title: getFormDataString(formData, 'title'),
     summary: getFormDataString(formData, 'summary'),
     instructions: getFormDataString(formData, 'instructions'),
@@ -20,6 +25,7 @@ export async function shareMeal(
     creator_email: getFormDataString(formData, 'email'),
     slug: null,
   };
+  console.log(meal);
   if (
     isInvalidText(meal.title) ||
     isInvalidText(meal.summary) ||
@@ -33,7 +39,7 @@ export async function shareMeal(
     return {
       message: 'Invalid input',
     };
+  } else {
+    await saveMeal(meal as MealType);
   }
-
-  await saveMeal(meal as MealType);
 }
