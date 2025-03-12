@@ -5,6 +5,11 @@ import getMeals from '@/lib/meals';
 import { MealType } from '@/initdb';
 import Spinner from '@/app/spinner';
 
+export const metadata = {
+  title: 'All meals',
+  description: 'Browse all the delicious meals shared by our community.',
+};
+
 async function FetchMeals() {
   const meals: MealType[] = await getMeals();
   return <MealsGrid meals={meals} />;
