@@ -4,6 +4,16 @@ import { getMeal } from '@/lib/meals';
 import { notFound } from 'next/navigation';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
+export async function generateMetadata({ params }: MealDetailProps) {
+  const meal = await getMeal((await params).slug);
+  if (!meal) {
+    notFound();
+  }
+  return {
+    title: meal.title,
+    description: meal.summary,
+  };
+}
 type MealDetailProps = {
   params: Promise<{ slug: string }>;
 };
