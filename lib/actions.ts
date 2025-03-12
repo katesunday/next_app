@@ -3,6 +3,7 @@
 import { MealType } from '@/initdb';
 import { getFormDataFile, getFormDataString } from '@/lib/helpers';
 import { saveMeal } from '@/lib/meals';
+import { revalidatePath } from 'next/cache';
 
 function isInvalidText(text: string | null) {
   return !text || text.trim() === '';
@@ -41,5 +42,6 @@ export async function shareMeal(
     };
   } else {
     await saveMeal(meal as MealType);
+    revalidatePath('/meals');
   }
 }
