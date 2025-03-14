@@ -6,7 +6,6 @@ import MealsFormSubmit from '@/components/meals/MealsFormSubmit';
 
 function ShareMealsPage() {
   const [state, formAction] = useActionState(shareMeal, { message: '' });
-  console.log(state);
 
   return (
     <>
