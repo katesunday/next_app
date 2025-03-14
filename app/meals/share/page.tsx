@@ -98,8 +98,13 @@ function ShareMealsPage() {
               required
             ></textarea>
           </p>
-          {state?.message && <p>{state?.message}</p>}
+
           <ImagePicker name="image" />
+          {state?.message && (
+            <p className="font-bold uppercase italic text-red-600">
+              {state?.message}
+            </p>
+          )}
           <p className="text-right">
             <MealsFormSubmit />
           </p>
